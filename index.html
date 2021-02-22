@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Complex Value Prediction</title>
+  </head>
+
+<body>
+ <div class="login">
+	<h1>Complex Parameters</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict_mean_value')}}"method="post">
+    	<input type="text" name="Complex_Age" placeholder="Complex_Age" required="required" />
+      <input type="text" name="Total_Rooms" placeholder="Total_Rooms" required="required" />
+      <input type="text" name="Total_Bedrooms" placeholder="Total_Bedrooms" required="required" />
+      <input type="text" name="Complex_Inhabitants" placeholder="Complex_Inhabitants" required="required" />
+      <input type="text" name="Total_Apartments" placeholder="Total_Apartments" required="required" />
+	
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict Complex Mean Value</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+</body>
+</html>
