@@ -28,7 +28,7 @@ def predict_mean_value():
     return render_template('index.html', prediction_text='Predicted Complex mean value $ {}'.format(output))
 
 @app.route('/predict_from_ml',methods=['POST'])
-def predict_mean_value():
+def predict_from_ml():
     int_features = [int(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
 
