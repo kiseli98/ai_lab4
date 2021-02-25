@@ -1,4 +1,5 @@
 import pickle
+import os
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -56,6 +57,8 @@ user_input = [[21,916,194,451,178]]   # should be 63300 - original value
 prediction =  lr_model.predict(user_input).flatten()
 print('Predicted value: ',prediction)
 
+dirname = os.path.dirname(__file__)
+model_name = os.path.join(dirname, 'lr_model.pkl')
 
 # Saving model to disk
-pickle.dump(lr_model, open('D:\\lr_model.pkl','wb'))
+pickle.dump(lr_model, open(model_name,'wb'))
