@@ -30,7 +30,7 @@ def predict_mean_value():
 @app.route('/predict_from_ml',methods=['POST'])
 def predict_from_ml():
     int_features = [int(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
+    final_features = [np.array(int_features).tolist()]
 
     url = "http://ee627d30-5244-4116-83e4-ff8ccd8e8841.westeurope.azurecontainer.io/score"
     data = {"data": final_features}
